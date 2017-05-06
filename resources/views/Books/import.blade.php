@@ -30,7 +30,7 @@
         {!! Form::open(['url' => url('/Books/doImportCSV'), 'class' => 'form', 'files'=>true]) !!} 
 
         <br>
-        <p>Para realizar a importação dos livros sem imagens via arquivo CSV, é necessário baixar o arquivo padrão e preenchê-lo corretamente.</p>
+        <p>Para realizar a importação dos livros sem imagens é necessário baixar o arquivo padrão ZIP e preencher o arquivo CSV corretamente de acordo com as instruções.</p>
 
         <p><a href="{{url('files/importBooks.csv')}}" target="_blank" class='btn btn-default'><span class='glyphicon glyphicon-save'></span> Arquivo padrão</a> </p>
         <br>
@@ -48,10 +48,10 @@
         <div class="alert alert-warning" role="alert">
             <p><strong>Atenção!</strong></p>
             <ul>
-                <li>Caso o registro não possua algum dos campos obrigatórios preenchidos, ele será ignorado.</li>
-                <li>Caso o tamanho do texto ultrapasse o limite máximo do campo, o excedente será desconsiderado.</li>
-                <li>Caso já exista um livro com o mesmo título, autor(es) e editora, o mesmo tera seus dados atualizados.</li>
-                <li>Caso o registro a ser atualizado possua uma imagem, a mesma não será alterada.</li>
+                <li>Caso o registro não possua algum dos campos obrigatórios preenchidos, o mesmo será ignorado.</li>
+                <li>Caso o tamanho do texto inserido ultrapasse o limite máximo do campo selecionado, o excedente será desconsiderado.</li>
+                <li>Caso já exista um livro com o mesmo título, autor(es) e editora, este terá seus dados atualizados.</li>
+                <li>Caso o registro a ser atualizado previamente possua uma imagem, a mesma não será alterada.</li>
             </ul>
         </div>
 
@@ -72,7 +72,7 @@
     <div role="tabpanel" class="tab-pane" id="comImagens">
         {!! Form::open(['url' => url('/Books/doImportZIP'), 'class' => 'form', 'files'=>true]) !!} 
         <br>
-        <p>Para fazer a importação dos livros com imagens é necessário baixar o arquivo padrão ZIP e preencher o arquivo CSV corretamente e anexar as imagens de acordo com as instruções.</p>
+        <p>Para fazer a importação dos livros com imagens é necessário baixar o arquivo padrão ZIP, preencher o arquivo CSV corretamente e anexar as imagens de acordo com as instruções.</p>
 
         <p><a href="{{url('files/importBooks.zip')}}" target="_blank" class='btn btn-default'><span class='glyphicon glyphicon-save'></span> Arquivo padrão</a> </p>
         <br>
@@ -83,7 +83,7 @@
                 <li>Título: Obrigatório; Máximo de 300 caracteres;</li>
                 <li>Autor(es): Obrigatório; Máximo de 200 caracteres;</li>
                 <li>Editora: Opcional; Máximo de 100 caracteres;</li>
-                <li>Imagem: Opcional; Extensões permitidas: jpeg, bmp, png, jpg; Deve ser o nome do arquivo acompanhado da extinção, Ex: “Capa do livro.jpg”;</li>
+                <li>Imagem: Opcional; Extensões permitidas: jpeg, bmp, png, jpg; O nome do arquivo deve ser acompanhado por sua extensão, Ex: “Capa do livro.jpg”;</li>
                 <li>Descrição: Opcional; Máximo de 5000 caracteres;</li>
             </ul>
         </div>
@@ -91,13 +91,13 @@
         <div class="alert alert-warning" role="alert">
             <p><strong>Atenção!</strong></p>
             <ul>
-                <li>Caso o registro não possua algum dos campos obrigatórios preenchidos, ele será ignorado.</li>
-                <li>Caso o tamanho do texto ultrapasse o limite máximo do campo, o excedente será desconsiderado.</li>
-                <li>Caso já exista um livro com o mesmo título, autor(es) e editora, o mesmo tera seus dados atualizados.</li>
-                <li>Caso o registro a ser atualizado possua uma imagem e na importação não seja informado uma nova ou esteja com um valor invalido, a imagem antiga não será alterada.</li>
-                <li>As imagens devem ficar na raiz do arquivo ZIP, caso estejam dentro de algum outro diretório elas serão desconsideradas.</li>
+                <li>Caso o registro não possua algum dos campos obrigatórios preenchidos, o mesmo será ignorado.</li>
+                <li>Caso o tamanho do texto inserido ultrapasse o limite máximo do campo selecionado, o excedente será desconsiderado.</li>
+                <li>Caso já exista um livro com o mesmo título, autor(es) e editora, este terá seus dados atualizados.</li>
+                <li>Caso o registro a ser atualizado previamente possua uma imagem, e na importação não seja informado uma nova ou esteja com um valor inválido, a imagem antiga não será alterada.</li>
+                <li>As imagens devem ficar na raiz do arquivo ZIP, caso contrário, serão desconsideradas.</li>
                 <li>Caso a imagem possua uma extensão não suportada, a mesma não será incluída no sistema.</li>
-                <li>O nome do arquivo CSV (importBooks.csv) não deve ser modificado, ele também não pode ser movido para dentro de algum outro diretório; caso isso aconteça a importação não ira ocorrer.</li>
+                <li>O nome do arquivo CSV (importBooks.csv) não deve ser modificado, ele também não pode ser movido para dentro de algum outro diretório; caso isso aconteça a importação não irá ocorrer.</li>
             </ul>
         </div>
 
