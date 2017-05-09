@@ -58,7 +58,7 @@
                             <!-- Authentication Links -->
                             @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('register') }}">Criar Conta</a></li>
                             @else
                             <li class="dropdown">
                                 <a href="{{ url('/')}}" role="button" aria-expanded="false">Home</a>
@@ -76,7 +76,7 @@
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Sair
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
